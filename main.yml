@@ -269,3 +269,12 @@ Resources:
       Name: !Sub 'webhook-${AWS::StackName}'
       TargetPipelineVersion: !GetAtt Pipeline.Version
       RegisterWithThirdParty: true
+
+
+
+Outputs:
+  InstanceEndpoint:
+    Description: The DNS name for the created instance
+    Value: !Sub "http://${Instance.PublicDnsName}:8080"
+    Export:
+      Name: InstanceEndpoint
